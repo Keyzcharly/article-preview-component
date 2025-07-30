@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --grayish-Blue: hsl(212, 23%, 69%);
+    --light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--light-Grayish-Blue);
+    color: var(--very-Dark-Grayish-Blue);
+    font-size: 13px;
+    font-family: "Manrope", sans-serif;
+}
+
+main {
+    max-width: 320px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.main-content {
+    padding: 2em 1.5em;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.mainp {
+    padding: 1em 0 3em 0;
+    line-height: 1.8;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar-deets {
+    margin-left: 1em;
+}
+
+.avatar-deets p {
+    font-size: .7rem;
+}
+
+.avatar-deets h5 {
+    font-size: .8rem;
+}
+
+button {
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 190px;
+    background-color: var(--very-Dark-Grayish-Blue);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -95px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--very-Dark-Grayish-Blue) transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.popuptext {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+}
+
+.share-button:hover{
+    filter: invert(100%);
+}
+
+
+/* responsive */
+
+@media only screen and (min-width: 700px) {
+    main {
+        display: flex;
+        max-width: 600px;
+    }
+
+    .main-image {
+        border-radius: 10px 0 0 10px;
+    }
+
+}
+
+/* responsive pop up */
+
+@media only screen and (max-width: 700px) {
+
+    .popup .popuptext {
+        width: 320px;
+        background-color: var(--very-Dark-Grayish-Blue);
+        border-radius: 0 0 6px 6px;
+        padding: 4em 2em;
+        position: absolute;
+        z-index: 1;
+        bottom: -70%;
+        left: 50%;
+        margin-left: -278px;
+    }
+
+    .popuptext {
+        justify-content: flex-start;
+    }
+
+    .popuptext img{
+        padding: 0 1em;
+    }
+
+    .popup .popuptext::after {
+        display: none;
+    }
+    
+    .share-button{
+        position: relative;
+        z-index: 2;
+        background: white;
+        padding: 10px;
+        border-radius: 50%;
+    }
+}
